@@ -78,12 +78,37 @@
   .download:hover, .download:active { background: var(--accent-press); }
   .download:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
   .download svg { flex: none; }
+  .download.quiet {
+    padding: 13px 20px;
+    border: 1px solid var(--line);
+    background: none;
+    color: var(--ink);
+    font-size: 16px;
+  }
+  .download.quiet:hover, .download.quiet:active { background: var(--tint); }
   .meta {
     margin: 12px 0 0;
     color: var(--ink-2);
     font-size: 14px;
     text-align: center;
   }
+  .apps { margin: 0; padding: 0; list-style: none; }
+  .apps li {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    gap: 14px 14px;
+    align-items: center;
+    margin: 0 0 14px;
+    padding: 18px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+  }
+  .apps li:last-child { margin-bottom: 0; }
+  /* The colour behind each app's icon on the home screen. */
+  .icon { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); }
+  .apps h3 { margin: 0; font-size: 17px; line-height: 1.3; }
+  .apps p { margin: 2px 0 0; color: var(--ink-2); font-size: 14.5px; line-height: 1.45; }
+  .apps .download { grid-column: 1 / -1; padding: 14px 20px; font-size: 16px; }
   .not-android {
     margin: 16px 0 0;
     padding: 12px 14px;
@@ -108,8 +133,11 @@
   }
   .facts li:last-child { border-bottom: 1px solid var(--line); }
   .facts strong { color: var(--ink); font-weight: 600; }
+  .sums { margin: 0; }
+  .sums dt { margin: 14px 0 0; font-size: 14px; font-weight: 600; }
+  .sums dd { margin: 0; }
   .sum {
-    margin: 8px 0 0;
+    margin: 6px 0 0;
     padding: 12px 14px;
     border-radius: 12px;
     background: var(--tint);
@@ -127,33 +155,95 @@
 <main>
   <span class="tag">Demo build</span>
   <h1>Matcha Matcha app demo for Android</h1>
-  <p class="lede">A clickable prototype of the app, packaged so it can be tried on a phone or tablet. Every customer, order and payment in it is simulated.</p>
+  <p class="lede">A clickable prototype, packaged as four apps: one for each person who uses it. Each fills the screen as the real app would. Every customer, order and payment in them is simulated.</p>
 
-  <a class="download" href="matcha-matcha-demo.apk" download="matcha-matcha-demo.apk">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 20h14"/></svg>
-    Download the APK
+  <ul class="apps">
+    <li>
+      <span class="icon" style="background:#f9f2e9"></span>
+      <div>
+        <h3>Matcha Matcha</h3>
+        <p>The customer's app: the shop, orders, rewards and the member QR. English and Arabic.</p>
+      </div>
+      <a class="download" href="matcha-matcha-customer.apk" download="matcha-matcha-customer.apk">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 20h14"/></svg>
+        Download Matcha Matcha
+      </a>
+    </li>
+    <li>
+      <span class="icon" style="background:#d5e7f7"></span>
+      <div>
+        <h3>Matcha Counter</h3>
+        <p>The cashier's screen beside the till: scan a member, record the sale, take a reward voucher.</p>
+      </div>
+      <a class="download" href="matcha-matcha-cashier.apk" download="matcha-matcha-cashier.apk">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 20h14"/></svg>
+        Download Matcha Counter
+      </a>
+    </li>
+    <li>
+      <span class="icon" style="background:#fbdce7"></span>
+      <div>
+        <h3>Matcha Manager</h3>
+        <p>The manager's app: the overview, customers, orders, the activity record and the counter.</p>
+      </div>
+      <a class="download" href="matcha-matcha-manager.apk" download="matcha-matcha-manager.apk">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 20h14"/></svg>
+        Download Matcha Manager
+      </a>
+    </li>
+    <li>
+      <span class="icon" style="background:#1c2418"></span>
+      <div>
+        <h3>Matcha Owner</h3>
+        <p>The owner's app: everything the manager has, plus the rewards list, the rewards rules and staff.</p>
+      </div>
+      <a class="download" href="matcha-matcha-owner.apk" download="matcha-matcha-owner.apk">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 20h14"/></svg>
+        Download Matcha Owner
+      </a>
+    </li>
+  </ul>
+  <p class="meta">Version 0.3.0 · 4.8 MB each · Android 7.0 or later</p>
+  <p class="not-android" id="not-android" hidden>These files install on Android only. Open this page on the Android device, or download the files here and move them across.</p>
+
+  <h2>All four in one app</h2>
+  <p class="lede" style="margin-bottom:16px">The earlier build, with every view behind a bar of tabs. It is the one where a sale at the counter is seen arriving on the customer's phone.</p>
+  <a class="download quiet" href="matcha-matcha-demo.apk" download="matcha-matcha-demo.apk">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 20h14"/></svg>
+    Download the all-in-one demo
   </a>
   <p class="meta">Version 0.2.1 · 4.8 MB · Android 7.0 or later</p>
-  <p class="not-android" id="not-android" hidden>This file installs on Android only. Open this page on the Android device, or download the file here and move it across.</p>
 
   <h2>How to install</h2>
   <ol>
-    <li>Tap <strong>Download the APK</strong>, then open the file from the download notification or the Files app.</li>
+    <li>Tap <strong>Download</strong> for the app you want, then open the file from the download notification or the Files app.</li>
     <li>If Android says the browser is not allowed to install apps, tap <strong>Settings</strong>, switch on <strong>Allow from this source</strong> and go back.</li>
     <li>Tap <strong>Install</strong>. If Play Protect says it does not recognise the app, choose <strong>Install anyway</strong>: the demo is not on Google Play.</li>
-    <li>Open <strong>Matcha Matcha</strong> from the app list.</li>
+    <li>Open the app from the app list. Each has its own name and icon colour, and all of them can be installed together.</li>
   </ol>
 
   <h2>Good to know</h2>
   <ul class="facts">
     <li><strong>Nothing is real.</strong> No account is created, no payment is taken and nothing leaves the device.</li>
-    <li><strong>Each device keeps its own data.</strong> A phone and a tablet do not share customers or orders.</li>
-    <li><strong>Replacing an older copy.</strong> If an earlier build of the demo is installed and Android refuses the update, uninstall the old one first.</li>
+    <li><strong>Each app keeps its own data.</strong> The four apps do not talk to each other: a sale recorded in Matcha Counter does not appear in Matcha Matcha. A phone and a tablet do not share customers or orders either.</li>
+    <li><strong>Demo controls.</strong> Press and hold the logo at the top of an app to reset its data. In Matcha Matcha the same sheet plays the café's part: a visit to the counter, or moving an order on to delivered.</li>
+    <li><strong>Replacing an older copy.</strong> The four apps install beside the all-in-one demo and beside each other. If Android refuses an update to one already installed, uninstall the old one first.</li>
   </ul>
 
-  <h2>Check the file</h2>
-  <p class="lede" style="margin-bottom:0">SHA-256 of the download:</p>
-  <p class="sum">956a8358a622eb78b114178fa89fe2eb910b170781edc1e2e05fc7cbc2caf22e</p>
+  <h2>Check the files</h2>
+  <p class="lede" style="margin-bottom:0">SHA-256 of each download:</p>
+  <dl class="sums">
+    <dt>Matcha Matcha</dt>
+    <dd><p class="sum">5c5a3fd21f6c698bf3fe321492a81bc12fb2ba2c8fb28fe9b50e337d2e3d15bc</p></dd>
+    <dt>Matcha Counter</dt>
+    <dd><p class="sum">217102430c0f3004e91b84d9f697523d217c99f61caefec7297098d38b05f1ce</p></dd>
+    <dt>Matcha Manager</dt>
+    <dd><p class="sum">c2c16b479c7b210d010a90d20dc1ffba3cc6d1cf70aa6e53891f5a2ac03bcc2a</p></dd>
+    <dt>Matcha Owner</dt>
+    <dd><p class="sum">38433dd80135fcbf2cedde42130fe6dd965d91e9d4124829642326ab8f8afbe8</p></dd>
+    <dt>All-in-one demo</dt>
+    <dd><p class="sum">956a8358a622eb78b114178fa89fe2eb910b170781edc1e2e05fc7cbc2caf22e</p></dd>
+  </dl>
 
   <footer>A private demonstration build, shared by direct link. It is not the published app and is not for redistribution.</footer>
 </main>
