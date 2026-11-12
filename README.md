@@ -1,9 +1,13 @@
 # Matcha Matcha demo for Android
 
-A download page for a demonstration build of the app (version 0.2.1). Every customer, order and payment in the demo is simulated.
+A demonstration build of the app (version 0.2.1). Every customer, order and payment in the demo is simulated.
+
+**[Download the APK](https://github.com/jalalhussein1982/matcha-share/raw/main/matcha-matcha-demo.apk)** (4.8 MB, Android 7.0 or later)
+
+Download page with install steps: https://jalalhussein1982.github.io/matcha-share/
 
 - `index.html`: the download page, served by GitHub Pages.
-- `matcha-matcha-demo.apk`: the Android package (4.8 MB, Android 7.0 or later).
+- `matcha-matcha-demo.apk`: the Android package.
 
 SHA-256 of the APK:
 
