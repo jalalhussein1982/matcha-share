@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Matcha Matcha demo for Android</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --ink: #1c2418;
+    --ink-2: #5a6355;
+    --line: #e4e8df;
+    --tint: #eaf1e2;
+    --accent: #4e7a39;
+    --accent-press: #35592a;
+    --on-accent: #ffffff;
+    --note: #fdf1d0;
+    --note-ink: #5c4508;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --page: #12160f;
+      --ink: #eef2ea;
+      --ink-2: #a9b3a2;
+      --line: #2a3125;
+      --tint: #1d2618;
+      --accent: #84a968;
+      --accent-press: #9dbd84;
+      --on-accent: #12160f;
+      --note: #2f2810;
+      --note-ink: #f3dc9a;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  main {
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 48px 20px 56px;
+  }
+  .tag {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: var(--tint);
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 600;
+  }
+  h1 {
+    margin: 16px 0 8px;
+    font-size: 30px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+  .lede { margin: 0 0 28px; color: var(--ink-2); }
+  .download {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 16px 20px;
+    border-radius: 14px;
+    background: var(--accent);
+    color: var(--on-accent);
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .download:hover, .download:active { background: var(--accent-press); }
+  .download:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+  .download svg { flex: none; }
+  .meta {
+    margin: 12px 0 0;
+    color: var(--ink-2);
+    font-size: 14px;
+    text-align: center;
+  }
+  .not-android {
+    margin: 16px 0 0;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: var(--note);
+    color: var(--note-ink);
+    font-size: 14px;
+  }
+  h2 {
+    margin: 40px 0 12px;
+    font-size: 18px;
+  }
+  ol { margin: 0; padding-inline-start: 22px; }
+  li { margin: 0 0 10px; padding-inline-start: 4px; }
+  li:last-child { margin-bottom: 0; }
+  .facts { margin: 0; padding: 0; list-style: none; }
+  .facts li {
+    margin: 0;
+    padding: 12px 0;
+    border-top: 1px solid var(--line);
+    color: var(--ink-2);
+  }
+  .facts li:last-child { border-bottom: 1px solid var(--line); }
+  .facts strong { color: var(--ink); font-weight: 600; }
+  .sum {
+    margin: 8px 0 0;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: var(--tint);
+    font: 12.5px/1.6 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    overflow-wrap: anywhere;
+  }
+  footer {
+    margin-top: 40px;
+    color: var(--ink-2);
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+<main>
+  <span class="tag">Demo build</span>
+  <h1>Matcha Matcha app demo for Android</h1>
+  <p class="lede">A clickable prototype of the app, packaged so it can be tried on a phone or tablet. Every customer, order and payment in it is simulated.</p>
+
+  <a class="download" href="matcha-matcha-demo.apk" download="matcha-matcha-demo.apk">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 20h14"/></svg>
+    Download the APK
+  </a>
+  <p class="meta">Version 0.2.1 · 4.8 MB · Android 7.0 or later</p>
+  <p class="not-android" id="not-android" hidden>This file installs on Android only. Open this page on the Android device, or download the file here and move it across.</p>
+
+  <h2>How to install</h2>
+  <ol>
+    <li>Tap <strong>Download the APK</strong>, then open the file from the download notification or the Files app.</li>
+    <li>If Android says the browser is not allowed to install apps, tap <strong>Settings</strong>, switch on <strong>Allow from this source</strong> and go back.</li>
+    <li>Tap <strong>Install</strong>. If Play Protect says it does not recognise the app, choose <strong>Install anyway</strong>: the demo is not on Google Play.</li>
+    <li>Open <strong>Matcha Matcha</strong> from the app list.</li>
+  </ol>
+
+  <h2>Good to know</h2>
+  <ul class="facts">
+    <li><strong>Nothing is real.</strong> No account is created, no payment is taken and nothing leaves the device.</li>
+    <li><strong>Each device keeps its own data.</strong> A phone and a tablet do not share customers or orders.</li>
+    <li><strong>Replacing an older copy.</strong> If an earlier build of the demo is installed and Android refuses the update, uninstall the old one first.</li>
+  </ul>
+
+  <h2>Check the file</h2>
+  <p class="lede" style="margin-bottom:0">SHA-256 of the download:</p>
+  <p class="sum">956a8358a622eb78b114178fa89fe2eb910b170781edc1e2e05fc7cbc2caf22e</p>
+
+  <footer>A private demonstration build, shared by direct link. It is not the published app and is not for redistribution.</footer>
+</main>
+<script>
+  if (!/Android/i.test(navigator.userAgent)) {
+    document.getElementById('not-android').hidden = false;
+  }
+</script>
+</body>
+</html>
